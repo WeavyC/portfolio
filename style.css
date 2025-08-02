@@ -75,6 +75,31 @@ section {
   margin-bottom: 0.5rem;
 }
 
+.groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.group-card {
+  background: #1e1e1e;
+  border-radius: 10px;
+  padding: 1rem;
+  flex: 1 1 300px;
+  border: 1px solid #333;
+  transition: transform 0.2s ease;
+}
+
+.group-card:hover {
+  transform: translateY(-4px);
+}
+
+.group-card h3 {
+  color: #00bcd4;
+  margin-bottom: 0.5rem;
+}
+
+
 footer {
   background-color: #1a1a1a;
   text-align: center;
