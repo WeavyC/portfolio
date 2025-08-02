@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #111;
@@ -16,6 +20,9 @@ header {
   padding: 1.5rem 2rem;
   text-align: center;
   border-bottom: 2px solid #00bcd4;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 header h1 {
