@@ -1,40 +1,47 @@
 const projects = [
   {
-    title: "Counter Blox: Reimagined & Modded (CLOSED)",
-    description: "Take part in a 5v5 team based fire fight across a variety of maps spanning across the globe.",
-    url: "https://www.roblox.com/games/101968612316612/Counter-Blox-Reimagined-Modded"
+    title: "+1 Speed Hoverboard Escape",
+    description: "Welcome to +1 Speed Hoverboard Escape! 🛹",
+    url: "https://www.roblox.com/games/96429933667357/1-Speed-Hoverboard-Escape",
+    image: "https://github.com/WeavyC/portfolio/blob/main/noFilter%20(7).png?raw=true"
   },
   {
-    title: "That One VOCALOID Game",
-    description: " Welcome to this awesome school where you can be a Vocaloid! Meet other Vocaloids and have fun in your school life in That One VOCALOID Game!",
-    url: "https://www.roblox.com/games/15489858419/That-One-VOCALOID-Game"
+    title: "City Of Vice",
+    description: "🔥 CITY OF VICE – Build your rise from nothing and take over the streets.",
+    url: "https://www.roblox.com/games/119963002291522/City-of-Vice",
+    image: "https://github.com/WeavyC/portfolio/blob/main/noFilter%20(8).png?raw=true" 
   },
   {
-    title: "Sonic Exe RP: New Nightmares (CLOSED)",
-    description: "In this RP game you can create your own story.",
-    url: "https://www.roblox.com/communities/17040749/fella-wesome-group#!/about"
+    title: "Counter Blox: Reimagined Modded",
+    description: "🗺 Take part in a team vs team based combat with maps spanning across the world!",
+    url: "https://www.youtube.com/watch?v=BKBBsn9RI7M",
+    image: "https://github.com/WeavyC/portfolio/blob/main/noFilter%20(9).png?raw=true" 
   }
 ];
 
 
 const groups = [
   {
-    name: "Weavy's Studio",
+    name: "Spectre Core",
     role: "Owner",
-    description: "FPS & Obbies.",
-    url: "https://www.roblox.com/communities/34059368/Weavys-Studio#!/about"
+    description: "Fun Games!",
+    url: "https://www.roblox.com/communities/642962631/Spectre-Core#!/about",
+  // image: "https://placehold.co/400x400/222/FFF?text=WS"
+    image: "https://tr.rbxcdn.com/180DAY-a6f763576b800f0877fef35e07387265/150/150/Image/Webp/noFilter"
   },
   {
     name: "Devolve Community",
     role: "Owner",
     description: "FPS Games. Mostly known for Counter Blox: Reimagined & Modded",
-    url : "https://www.roblox.com/communities/35766332/Devolve-Studio#!/about"
+    url : "https://www.roblox.com/communities/702299356/Devolve-Games#!/about",
+    image: "https://tr.rbxcdn.com/180DAY-1839f51e2f9ad3156966f3b5e5ed8a21/150/150/Image/Webp/noFilter"
   },
   {
-    name: "VSoft",
+    name: "City Of Vice",
     role: "Scripter",
-    description: "Known for TFOR and Alice In Borderlands.",
-    url: "https://www.roblox.com/communities/32843109/VS-ft#!/about"
+    description: "Known for City Of Vice.",
+    url: "https://www.roblox.com/communities/918674343/CityOfVice#!/about",
+    image: "https://tr.rbxcdn.com/180DAY-c3d2db22b92c137e52cf294174589ec1/150/150/Image/Webp/noFilter"
   }
 ];
 
@@ -44,10 +51,19 @@ const projectList = document.getElementById("project-list");
 projects.forEach(project => {
   const card = document.createElement("div");
   card.className = "project-card";
+  const bgImage = project.image.includes("rbxcdn") ? "https://placehold.co/600x340/111/00bcd4?text=Game+Preview" : project.image;
+  
   card.innerHTML = `
-    <h3>${project.title}</h3>
-    <p>${project.description}</p>
-    <a href="${project.url}" class="btn" target="_blank">View Project</a>
+    <div class="card-image-wrapper">
+        <img src="${bgImage}" alt="${project.title}" class="card-image">
+        <div class="card-overlay">
+            <a href="${project.url}" class="play-btn" target="_blank">PLAY</a>
+        </div>
+    </div>
+    <div class="card-content">
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+    </div>
   `;
   projectList.appendChild(card);
 });
@@ -58,9 +74,15 @@ groups.forEach(group => {
   const card = document.createElement("div");
   card.className = "group-card";
   card.innerHTML = `
-    <h3>${group.name}</h3>
-    <p><strong>${group.role}</strong><br>${group.description}</p>
-    <a href="${group.url}" class="btn" target="_blank">Visit Group</a>
+    <div class="group-icon">
+        <img src="${group.image}" alt="${group.name}">
+    </div>
+    <div class="group-info">
+        <h3>${group.name}</h3>
+        <p class="role">${group.role}</p>
+        <p class="desc">${group.description}</p>
+        <a href="${group.url}" class="group-link" target="_blank">View Group <span class="arrow">→</span></a>
+    </div>
   `;
   groupList.appendChild(card);
 });
